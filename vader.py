@@ -42,7 +42,7 @@ for i, row in tqdm(df.iterrows(), total=len(df)):
     result[myid] = sia.polarity_scores(text)
 
 
-vaders = pd.DataFrame(res).T
+vaders = pd.DataFrame(result).T
 vaders = vaders.reset_index().rename(columns={'index': 'Id'})
 vaders = vaders.merge(df, how='left')
 
